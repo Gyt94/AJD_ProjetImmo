@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RestWebService {
 	
 	ServicePersonne servicePersonne = new ServicePersonne();
-//test
+
 	@RequestMapping(value = "/utilisateur", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
