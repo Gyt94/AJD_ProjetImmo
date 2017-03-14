@@ -17,6 +17,11 @@ public abstract class BienImmobilier {
 		super();
 	}
 	
+	public BienImmobilier(String ville) {
+		super();
+		this.ville = ville;
+	}
+	
 	public BienImmobilier(String ville, int budgetMini, int budgetMax) {
 		super();
 		this.ville = ville;

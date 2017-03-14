@@ -4,7 +4,10 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+
+import org.descartes.domain.BienImmobilier;
 
 public class ServiceBienImmobilier {
 
@@ -23,11 +26,17 @@ public class ServiceBienImmobilier {
 	}
 
 	public List<?> findBienImmobilierFromACity(String ville) {
-		return null;
+		List<?> liste = entityManager.createQuery( "SELECT p FROM Utilisateur p WHERE p.nom LIKE :ville" )
+				.setParameter( "ville", ville)
+				.getResultList();
+		return liste;
 	}
 	
-	public void addBienImmobilier() {
-
+	public void addBienImmobilier(BienImmobilier bienImmobilier) {
+		EntityTransaction tx = entityManager.getTransaction();
+		tx.begin();
+		entityManager.persist(bienImmobilier);
+		tx.commit();
 	}
 	
 }
