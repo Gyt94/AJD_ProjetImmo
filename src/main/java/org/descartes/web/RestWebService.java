@@ -6,6 +6,7 @@ import org.descartes.domain.Utilisateur;
 import org.descartes.services.ServicePersonne;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,21 +21,21 @@ public class RestWebService {
 	
 	ServicePersonne servicePersonne = new ServicePersonne();
 //test
-	@RequestMapping(value = "/personne", method = RequestMethod.GET)
+	@RequestMapping(value = "/utilisateur", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public List<?> getPersonne(){
+	public List<?> getUtilisateurs(){
 		return servicePersonne.findAll();
 	}
 	
-	@RequestMapping(value = "/personne/{nom}", method = RequestMethod.GET)
+	@RequestMapping(value = "/utilisateur/{nom}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public Utilisateur getPersonne(@PathVariable("nom") String nom){
+	public Utilisateur getUtilisateur(@PathVariable("nom") String nom){
 		return servicePersonne.findPersonne(nom);
 	}
 	
-	@RequestMapping(value = "/personne", method = RequestMethod.POST)
+	@RequestMapping(value = "/utilisateur", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.OK)
 	public void postPersonne(@RequestBody Utilisateur personne){
 		System.out.println(personne);
