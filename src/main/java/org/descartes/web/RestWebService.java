@@ -2,7 +2,7 @@ package org.descartes.web;
 
 import java.util.List;
 
-import org.descartes.domain.Personne;
+import org.descartes.domain.Utilisateur;
 import org.descartes.services.ServicePersonne;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
@@ -30,13 +30,13 @@ public class RestWebService {
 	@RequestMapping(value = "/personne/{nom}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public Personne getPersonne(@PathVariable("nom") String nom){
+	public Utilisateur getPersonne(@PathVariable("nom") String nom){
 		return servicePersonne.findPersonne(nom);
 	}
 	
 	@RequestMapping(value = "/personne", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.OK)
-	public void postPersonne(@RequestBody Personne personne){
+	public void postPersonne(@RequestBody Utilisateur personne){
 		System.out.println(personne);
 		servicePersonne.addPersonne(personne);
 	}

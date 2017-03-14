@@ -6,16 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Personne {
+public class Utilisateur {
 
 	String nom;
 	long id;
 	
-	public Personne() {
+	public Utilisateur() {
 		super();
 	}
 
-	public Personne(String nom) {
+	public Utilisateur(String nom) {
 		this.nom = nom;
 	}
 
