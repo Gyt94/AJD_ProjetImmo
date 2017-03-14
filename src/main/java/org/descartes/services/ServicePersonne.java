@@ -20,14 +20,14 @@ public class ServicePersonne {
 	}
 	
 	public Utilisateur findPersonne(String nom){
-		List liste = entityManager.createQuery( "SELECT p FROM Utilisateur p WHERE p.nom LIKE :namePerson" )
+		List<?> liste = entityManager.createQuery( "SELECT p FROM Utilisateur p WHERE p.nom LIKE :namePerson" )
 				.setParameter( "namePerson", nom)
 				.getResultList();
 		return (Utilisateur) liste.get(0);
 	}
 	
 	public List<?> findAll(){
-		List liste = entityManager.createQuery( "SELECT p FROM Utilisateur p" )
+		List<?> liste = entityManager.createQuery( "SELECT p FROM Utilisateur p" )
 				.getResultList();
 		return liste;
 	}

@@ -1,10 +1,17 @@
 package org.descartes.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public abstract class BienImmobilier {
 
 	private String ville;
 	private int budgetMini;
 	private int budgetMax;
+	private long id;
 	
 	public BienImmobilier() {
 		super();
@@ -15,6 +22,16 @@ public abstract class BienImmobilier {
 		this.ville = ville;
 		this.budgetMini = budgetMini;
 		this.budgetMax = budgetMax;
+	}
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getVille() {
