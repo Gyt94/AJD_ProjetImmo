@@ -17,19 +17,17 @@ public class ServiceBienImmobilier {
 	}
 
 	public List<?> findAll(){
-		return null;
+		List<?> liste = entityManager.createQuery( "SELECT * FROM BienImmobilier" )
+				.getResultList();
+		return liste;
 	}
 
 	public List<?> findBienImmobilierFromACity(String ville) {
 		return null;
 	}
 	
-	/**
-	public void addPersonne(Utilisateur personne){
-		EntityTransaction tx = entityManager.getTransaction();
-		tx.begin();
-		entityManager.persist(personne);
-		tx.commit();
+	public void addBienImmobilier() {
+
 	}
-	 */
+	
 }

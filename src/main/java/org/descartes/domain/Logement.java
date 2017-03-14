@@ -1,12 +1,19 @@
 package org.descartes.domain;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Logement extends BienImmobilier {
 	
 	private TypeLogement typeLogement;
 	
-	public Logement(String ville, int budgetMini, int budgetMax) {
+	public Logement() {
+		super();
+	}
+	
+	public Logement(String ville, int budgetMini, int budgetMax, TypeLogement typeLogement) {
 		super(ville, budgetMini, budgetMax);
-		// TODO Auto-generated constructor stub
+		this.typeLogement = typeLogement;
 	}
 
 	public TypeLogement getTypeLogement() {
