@@ -25,7 +25,8 @@ public class RestWebService {
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public List<?> getUtilisateurs(){
-		return servicePersonne.findAll();
+		List<Utilisateur> luti = (List<Utilisateur>) servicePersonne.findAll();
+		return luti;
 	}
 	
 	@RequestMapping(value = "/utilisateur/{nom}", method = RequestMethod.GET)
