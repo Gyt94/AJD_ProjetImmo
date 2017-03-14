@@ -5,13 +5,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 @Entity
+@JsonTypeInfo(use=com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME)
+@JsonSubTypes({
+		@JsonSubTypes.Type(value=Logement.class, name="Logement"),
+		@JsonSubTypes.Type(value=Terrain.class, name="Terrain")
+})
 public abstract class BienImmobilier {
 
 	private String ville;
 	private int budgetMini;
 	private int budgetMax;
 	private long id;
+	
 	
 	public BienImmobilier() {
 		super();

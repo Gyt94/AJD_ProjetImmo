@@ -2,7 +2,10 @@ package org.descartes.domain;
 
 import javax.persistence.Entity;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 @Entity
+@JsonTypeName("Logement")
 public class Logement extends BienImmobilier {
 	
 	private TypeLogement typeLogement;

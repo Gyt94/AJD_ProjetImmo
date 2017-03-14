@@ -20,13 +20,13 @@ public class ServiceBienImmobilier {
 	}
 
 	public List<?> findAll(){
-		List<?> liste = entityManager.createQuery( "SELECT * FROM BienImmobilier" )
+		List<?> liste = entityManager.createQuery( "SELECT p FROM BienImmobilier p" )
 				.getResultList();
 		return liste;
 	}
 
 	public List<?> findBienImmobilierFromACity(String ville) {
-		List<?> liste = entityManager.createQuery( "SELECT p FROM Utilisateur p WHERE p.nom LIKE :ville" )
+		List<?> liste = entityManager.createQuery( "SELECT p FROM BienImmobilier p WHERE p.ville LIKE :ville" )
 				.setParameter( "ville", ville)
 				.getResultList();
 		return liste;

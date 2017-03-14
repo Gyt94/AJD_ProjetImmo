@@ -2,7 +2,10 @@ package org.descartes.domain;
 
 import javax.persistence.Entity;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 @Entity
+@JsonTypeName("Terrain")
 public class Terrain extends BienImmobilier {
 
 	public Terrain() {
