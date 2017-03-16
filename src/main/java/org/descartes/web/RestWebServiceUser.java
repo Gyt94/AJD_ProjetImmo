@@ -2,8 +2,8 @@ package org.descartes.web;
 
 import java.util.List;
 
-import org.descartes.domain.Utilisateur;
-import org.descartes.services.ServicePersonne;
+import org.descartes.domain.User;
+import org.descartes.services.ServiceUser;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,29 +16,28 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController 
 @EnableAutoConfiguration 
-public class RestWebService {
+public class RestWebServiceUser {
 	
-	ServicePersonne servicePersonne = new ServicePersonne();
+	ServiceUser serviceUser = new ServiceUser();
 
-	@RequestMapping(value = "/utilisateur", method = RequestMethod.GET)
+	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public List<?> getUtilisateurs(){
-		List<Utilisateur> luti = (List<Utilisateur>) servicePersonne.findAll();
-		return luti;
+	public List<?> getUsers(){
+		List<User> users = (List<User>) serviceUser.findAll();
+		return users;
 	}
 	
-	@RequestMapping(value = "/utilisateur/{nom}", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/{mail}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public Utilisateur getUtilisateur(@PathVariable("nom") String nom){
-		return servicePersonne.findPersonne(nom);
+	public User getUserFromMail(@PathVariable("mail") String mail){
+		return serviceUser.findUser(mail);
 	}
 	
-	@RequestMapping(value = "/utilisateur", method = RequestMethod.POST)
+	@RequestMapping(value = "/user", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.OK)
-	public void postPersonne(@RequestBody Utilisateur personne){
-		System.out.println(personne);
-		servicePersonne.addPersonne(personne);
+	public void postUser(@RequestBody User user){
+		serviceUser.addUser(user);
 	}
 }

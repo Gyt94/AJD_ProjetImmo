@@ -36,7 +36,7 @@ public class RestWebServiceBienImmobilier {
 	
 	@RequestMapping(value = "/bienImmobilier", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.OK)
-	public void postPersonne(@RequestBody BienImmobilier bienImmobilier){
+	public void postBienImmobilier(@RequestBody BienImmobilier bienImmobilier){
 		serviceBienImmobilier.addBienImmobilier(bienImmobilier);
 	}
 

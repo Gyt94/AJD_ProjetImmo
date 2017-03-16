@@ -7,23 +7,23 @@ import javax.persistence.Persistence;
 
 import java.util.List;
 
-import org.descartes.domain.Utilisateur;
+import org.descartes.domain.User;
 
-public class ServicePersonne {
+public class ServiceUser {
 
 	EntityManager entityManager;
 	
-	public ServicePersonne() {
+	public ServiceUser() {
 		super();
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("manager1");
 		entityManager = emf.createEntityManager();
 	}
 	
-	public Utilisateur findPersonne(String nom){
-		List<?> liste = entityManager.createQuery( "SELECT p FROM Utilisateur p WHERE p.nom LIKE :namePerson" )
-				.setParameter( "namePerson", nom)
+	public User findUser(String mail){
+		List<?> liste = entityManager.createQuery( "SELECT p FROM Utilisateur p WHERE p.mail LIKE :mailUser" )
+				.setParameter( "mailUser", mail)
 				.getResultList();
-		return (Utilisateur) liste.get(0);
+		return (User) liste.get(0);
 	}
 	
 	public List<?> findAll(){
@@ -32,10 +32,10 @@ public class ServicePersonne {
 		return liste;
 	}
 	
-	public void addPersonne(Utilisateur personne){
+	public void addUser(User user){
 		EntityTransaction tx = entityManager.getTransaction();
 		tx.begin();
-		entityManager.persist(personne);
+		entityManager.persist(user);
 		tx.commit();
 	}
 	
