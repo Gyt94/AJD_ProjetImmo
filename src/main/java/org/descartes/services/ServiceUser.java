@@ -20,14 +20,14 @@ public class ServiceUser {
 	}
 	
 	public User findUser(String mail){
-		List<?> liste = entityManager.createQuery( "SELECT p FROM Utilisateur p WHERE p.mail LIKE :mailUser" )
+		List<?> liste = entityManager.createQuery( "SELECT p FROM User p WHERE p.mail LIKE :mailUser" )
 				.setParameter( "mailUser", mail)
 				.getResultList();
 		return (User) liste.get(0);
 	}
 	
 	public List<?> findAll(){
-		List<?> liste = entityManager.createQuery( "SELECT p FROM Utilisateur p" )
+		List<?> liste = entityManager.createQuery( "SELECT p FROM User p" )
 				.getResultList();
 		return liste;
 	}
