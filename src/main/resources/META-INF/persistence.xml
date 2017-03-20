@@ -7,7 +7,7 @@
     
 	    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 	    
-	    <class>org.descartes.domain.User</class>
+	    <class>org.descartes.domain.Utilisateur</class>
 	    <class>org.descartes.domain.BienImmobilier</class>
 	    <class>org.descartes.domain.Logement</class>
 	    <class>org.descartes.domain.Terrain</class>
