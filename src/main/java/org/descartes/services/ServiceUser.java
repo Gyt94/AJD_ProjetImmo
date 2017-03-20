@@ -28,7 +28,7 @@ public class ServiceUser {
 	
 	public List<?> findAll(){
 
-		List<?> liste = entityManager.createQuery( "SELECT p FROM Users p" )
+		List<?> liste = entityManager.createQuery( "SELECT p FROM User p" )
 				.getResultList();
 		return liste;
 	}

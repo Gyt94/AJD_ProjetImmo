@@ -3,7 +3,9 @@ package org.descartes.web;
 import java.util.List;
 
 import org.descartes.domain.BienImmobilier;
+import org.descartes.services.IServiceBienImmobilier;
 import org.descartes.services.ServiceBienImmobilier;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 public class RestWebServiceBienImmobilier {
 
-	ServiceBienImmobilier serviceBienImmobilier = new ServiceBienImmobilier();
+	@Autowired
+	IServiceBienImmobilier serviceBienImmobilier;
 	
 	@RequestMapping(value = "/allBienImmobilier", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
