@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
 
 import org.descartes.domain.BienImmobilier;
 
-public class ServiceBienImmobilier {
+public class ServiceBienImmobilier implements IServiceBienImmobilier {
 
 	EntityManager entityManager;
 
