@@ -21,9 +21,11 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 
 <context:annotation-config/>
 
-<bean id="siteController" class="location.LocationController">
+<bean id="siteController" class="org.descartes.web.RestWebServiceUser">
 </bean>
 
+<bean id="siteController" class="org.descartes.web.RestWebServiceBienImmobilier">
+</bean>
 
 <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
    <property name="messageConverters">

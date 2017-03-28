@@ -1,23 +1,23 @@
 'use strict';
 
-var app = angular.module('rentCar', [
+var app = angular.module('ProjetImmo', [
 	'ngRoute','locationControllers'                                               ]);
 
 app.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
-			when('/rentCars', {
+			when('/projetImmo', {
 				templateUrl: 'partials/menu.html'
 			}).
-			when('/rentCars/louer', {
+			when('/projetImmo/louer', {
 				templateUrl: 'partials/location.html',
 				controller: 'locationController'
 			}).
-			when('/rentCars/ramener', {
-				templateUrl: 'partials/ramenerVoiture.html',
+			when('/projetImmo/ramener', {
+				templateUrl: 'partials/ramenerLoc.html',
 				controller: 'ramenerController'
 			}).
 			otherwise({
-				redirectTo: '/rentCars'
+				redirectTo: '/projetImmo'
 			});
 }]);
