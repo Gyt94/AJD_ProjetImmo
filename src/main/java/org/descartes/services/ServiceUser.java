@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.descartes.domain.User;
 
-public class ServiceUser {
+public class ServiceUser implements IServiceUser{
 
 	EntityManager entityManager;
 	

@@ -3,7 +3,9 @@ package org.descartes.web;
 import java.util.List;
 
 import org.descartes.domain.User;
+import org.descartes.services.IServiceUser;
 import org.descartes.services.ServiceUser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,8 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController 
 @EnableAutoConfiguration 
 public class RestWebServiceUser {
-	
-	ServiceUser serviceUser = new ServiceUser();
+	@Autowired
+	IServiceUser serviceUser ;
 
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
