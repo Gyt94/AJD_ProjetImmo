@@ -10,11 +10,15 @@ app.config(['$routeProvider',
 				templateUrl: 'partials/menu.html'
 			}).
 			when('/projetImmo/louer', {
-				templateUrl: 'partials/location.html',
+				templateUrl: 'partials/chercher.html',
 				controller: 'locationController'
 			}).
 			when('/projetImmo/ramener', {
-				templateUrl: 'partials/ramenerLoc.html',
+				templateUrl: 'partials/mettreVente.html',
+				controller: 'ramenerController'
+			}).
+			when('/projetImmo/example', {
+				templateUrl: 'partials/miseVente.html',
 				controller: 'ramenerController'
 			}).
 			otherwise({
