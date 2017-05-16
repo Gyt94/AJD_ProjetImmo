@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public abstract class BienImmobilier {
+public class BienImmobilier {
 
 	private String ville;
 	private int budgetMini;
@@ -17,11 +17,6 @@ public abstract class BienImmobilier {
 	
 	public BienImmobilier() {
 		super();
-	}
-	
-	public BienImmobilier(String ville) {
-		super();
-		this.ville = ville;
 	}
 	
 	public BienImmobilier(String ville, int budgetMini, int budgetMax, TypeLogement typeLogement) {
