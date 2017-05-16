@@ -32,8 +32,10 @@ public class RestWebServiceBienImmobilier {
 	@RequestMapping(value = "/trouverLogement/{typeLogement}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public List<?> trouverLogement(@PathVariable("typeLogement") TypeLogement typeLogement){
-		return serviceBienImmobilier.trouverLogement(typeLogement);
+	public List<?> trouverLogement(@PathVariable("typeLogement") String typeLogement){
+		TypeLogement type = TypeLogement.valueOf(typeLogement);
+		System.out.println(type);
+		return serviceBienImmobilier.trouverLogement(type);
 	}
 	
 	@RequestMapping(value = "/bienImmobilier", method = RequestMethod.POST)

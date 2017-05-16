@@ -21,6 +21,10 @@ app.config(['$routeProvider',
 				templateUrl: 'partials/miseVente.html',
 				controller: 'ramenerController'
 			}).
+			when('/projetImmo/trouverLogement/:msg', {
+				templateUrl: 'partials/trouverLogement.html',
+				controller: 'trouverLogement'
+			}).
 			otherwise({
 				redirectTo: '/projetImmo'
 			});
