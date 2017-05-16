@@ -34,7 +34,6 @@ public class RestWebServiceBienImmobilier {
 	@ResponseBody
 	public List<?> trouverLogement(@PathVariable("typeLogement") String typeLogement){
 		TypeLogement type = TypeLogement.valueOf(typeLogement);
-		System.out.println(type);
 		return serviceBienImmobilier.trouverLogement(type);
 	}
 	

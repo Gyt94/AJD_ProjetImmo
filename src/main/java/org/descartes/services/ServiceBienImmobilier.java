@@ -41,7 +41,7 @@ public class ServiceBienImmobilier implements IServiceBienImmobilier {
 	}
 
 	public List<?> trouverLogement(TypeLogement typeLogement) {
-		List<?> liste = entityManager.createQuery( "SELECT p FROM Logement p WHERE p.typeLogement LIKE :typeLogement" )
+		List<?> liste = entityManager.createQuery( "SELECT p FROM BienImmobilier p WHERE p.typeLogement LIKE :typeLogement" )
 				.setParameter( "typeLogement", typeLogement)
 				.getResultList();
 		return liste;
