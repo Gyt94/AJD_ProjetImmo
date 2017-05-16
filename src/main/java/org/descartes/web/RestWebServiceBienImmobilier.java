@@ -1,10 +1,9 @@
 package org.descartes.web;
 
 import java.util.List;
-
 import org.descartes.domain.BienImmobilier;
+import org.descartes.domain.TypeLogement;
 import org.descartes.services.IServiceBienImmobilier;
-import org.descartes.services.ServiceBienImmobilier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
@@ -22,13 +21,6 @@ public class RestWebServiceBienImmobilier {
 
 	@Autowired
 	IServiceBienImmobilier serviceBienImmobilier;
-	
-	@RequestMapping(value = "/allBienImmobilier", method = RequestMethod.GET)
-	@ResponseStatus(HttpStatus.OK)
-	@ResponseBody
-	public List<?> getAllBienImmobilier(){
-		return serviceBienImmobilier.findAll();
-	}
 
 	@RequestMapping(value = "/allBienImmobilierFromACity/{ville}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
@@ -37,10 +29,18 @@ public class RestWebServiceBienImmobilier {
 		return serviceBienImmobilier.findBienImmobilierFromACity(ville);
 	}
 	
+	@RequestMapping(value = "/trouverLogement/{typeLogement}", method = RequestMethod.GET)
+	@ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public List<?> trouverLogement(@PathVariable("typeLogement") TypeLogement typeLogement){
+		return serviceBienImmobilier.trouverLogement(typeLogement);
+	}
+	
 	@RequestMapping(value = "/bienImmobilier", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.OK)
 	public void postBienImmobilier(@RequestBody BienImmobilier bienImmobilier){
 		serviceBienImmobilier.addBienImmobilier(bienImmobilier);
 	}
+
 
 }
