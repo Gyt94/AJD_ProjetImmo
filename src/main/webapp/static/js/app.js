@@ -13,13 +13,9 @@ app.config(['$routeProvider',
 				templateUrl: 'partials/chercher.html',
 				controller: 'locationController'
 			}).
-			when('/projetImmo/ramener', {
-				templateUrl: 'partials/mettreVente.html',
-				controller: 'ramenerController'
-			}).
-			when('/projetImmo/example', {
-				templateUrl: 'partials/miseVente.html',
-				controller: 'ramenerController'
+			when('/projetImmo/trouverLogement/:msg', {
+				templateUrl: 'partials/trouverLogement.html',
+				controller: 'trouverLogement'
 			}).
 			otherwise({
 				redirectTo: '/projetImmo'
