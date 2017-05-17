@@ -9,8 +9,7 @@ import javax.persistence.Id;
 public class BienImmobilier {
 
 	private String ville;
-	private int budgetMini;
-	private int budgetMax;
+	private int prix;
 	private TypeLogement typeLogement;
 	private long id;
 	
@@ -19,11 +18,10 @@ public class BienImmobilier {
 		super();
 	}
 	
-	public BienImmobilier(String ville, int budgetMini, int budgetMax, TypeLogement typeLogement) {
+	public BienImmobilier(String ville, int prix, TypeLogement typeLogement) {
 		super();
 		this.ville = ville;
-		this.budgetMini = budgetMini;
-		this.budgetMax = budgetMax;
+		this.prix = prix;
 		this.typeLogement = typeLogement;
 	}
 	
@@ -45,20 +43,12 @@ public class BienImmobilier {
 		this.ville = ville;
 	}
 
-	public int getBudgetMini() {
-		return budgetMini;
+	public int getPrix() {
+		return prix;
 	}
 
-	public void setBudgetMini(int budgetMini) {
-		this.budgetMini = budgetMini;
-	}
-
-	public int getBudgetMax() {
-		return budgetMax;
-	}
-
-	public void setBudgetMax(int budgetMax) {
-		this.budgetMax = budgetMax;
+	public void setPrix(int prix) {
+		this.prix = prix;
 	}
 
 	public TypeLogement getTypeLogement() {
