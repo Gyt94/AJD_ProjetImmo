@@ -5,13 +5,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 @Entity
-public class BienImmobilier {
+@JsonTypeInfo(use=com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME)
+@JsonSubTypes({
+		@JsonSubTypes.Type(value=Logement.class, name="Logement"),
+		@JsonSubTypes.Type(value=Terrain.class, name="Terrain")
+})
+public abstract class BienImmobilier {
 
 	private String ville;
 	private int budgetMini;
 	private int budgetMax;
-	private TypeLogement typeLogement;
 	private long id;
 	
 	
@@ -19,12 +26,16 @@ public class BienImmobilier {
 		super();
 	}
 	
-	public BienImmobilier(String ville, int budgetMini, int budgetMax, TypeLogement typeLogement) {
+	public BienImmobilier(String ville) {
+		super();
+		this.ville = ville;
+	}
+	
+	public BienImmobilier(String ville, int budgetMini, int budgetMax) {
 		super();
 		this.ville = ville;
 		this.budgetMini = budgetMini;
 		this.budgetMax = budgetMax;
-		this.typeLogement = typeLogement;
 	}
 	
 	@Id
@@ -59,14 +70,6 @@ public class BienImmobilier {
 
 	public void setBudgetMax(int budgetMax) {
 		this.budgetMax = budgetMax;
-	}
-
-	public TypeLogement getTypeLogement() {
-		return typeLogement;
-	}
-
-	public void setTypeLogement(TypeLogement typeLogement) {
-		this.typeLogement = typeLogement;
 	}
 	
 }

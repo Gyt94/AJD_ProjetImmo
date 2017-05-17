@@ -17,14 +17,6 @@ app.config(['$routeProvider',
 				templateUrl: 'partials/mettreVente.html',
 				controller: 'ramenerController'
 			}).
-			when('/projetImmo/ajoutBien', {
-				templateUrl: 'partials/mettreVenteForm.html',
-				controller: 'ramenerController'
-			}).
-			when('/projetImmo/trouverLogement/:msg', {
-				templateUrl: 'partials/trouverLogement.html',
-				controller: 'trouverLogement'
-			}).
 			when('/projetImmo/example', {
 				templateUrl: 'partials/miseVente.html',
 				controller: 'ramenerController'

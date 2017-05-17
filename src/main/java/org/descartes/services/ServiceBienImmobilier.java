@@ -8,7 +8,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import org.descartes.domain.BienImmobilier;
-import org.descartes.domain.TypeLogement;
 
 public class ServiceBienImmobilier implements IServiceBienImmobilier {
 
@@ -38,13 +37,6 @@ public class ServiceBienImmobilier implements IServiceBienImmobilier {
 		tx.begin();
 		entityManager.persist(bienImmobilier);
 		tx.commit();
-	}
-
-	public List<?> trouverLogement(TypeLogement typeLogement) {
-		List<?> liste = entityManager.createQuery( "SELECT p FROM BienImmobilier p WHERE p.typeLogement LIKE :typeLogement" )
-				.setParameter( "typeLogement", typeLogement)
-				.getResultList();
-		return liste;
 	}
 	
 }
