@@ -27,45 +27,32 @@
 				<div class="inner">
 					<header class="align-center">
 						<h2>Mettez votre bien en location</h2>
-						<p>Vous possedez un appartement ou maison ? Mettez-le en location !</p>
+						<p>Remplissez les caractéristiques de votre bien :</p>
 					</header>
 				</div>
-				<div class="flex flex-2">
-						<article>
-							<div class="image fit">
-								<img src="images/maison.jpg" alt="Pic 01" />
-							</div>
-							<header>
-								<h3>Louez une maison</h3>
-							</header>
-							<p>Définissez vos critères pour la location d'une maison</p>
-							<footer>
-								<a href="#/projetImmo/trouverLogement/Maison" class="button special">More</a>
-							</footer>
-						</article>
-						<article>
-							<div class="image fit">
-								<img src="images/appart.jpg" alt="Pic 02" />
-							</div>
-							<header>
-								<h3>Louez un appartement</h3>
-							</header>
-							<p>Définissez vos critères pour la location d'un appartement</p>
-							<footer>
-								<a href="#" class="button special">More</a>
-							</footer>
-						</article>
-					</div>
+				<!--  <div ng-app="postserviceApp" ng-controller="postserviceCtrl">-->
+<div>
+Ville : <input ng-model="bienImmobilier.ville" /><br/><br/>
+Budget Minimal : <input ng-model="bienImmobilier.budgetMini" /><br/><br/>
+Budget Maximal : <input ng-model="bienImmobilier.budgetMax" /><br/><br/>
+ <input type="hidden" ng-model="bienImmobilier.id" value=""/><
+<a href="#" class="button special" ng-click="postdata(bienImmobilier)" >Send</a>
+<input type="button" value="Send" ng-click="postdata(bienImmobilier)" /> <br/><br/>
 			</section>
 
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
 					<div class="flex">
+						<div class="copyright">
+							&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						</div>
 						<ul class="icons">
 							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+							<li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+							<li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
 						</ul>
 					</div>
 				</div>
