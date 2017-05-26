@@ -9,5 +9,6 @@ public interface IServiceBienImmobilier {
 
 	public List<?> trouverLogement(TypeLogement typeLogement);
 	public void addBienImmobilier(BienImmobilier bienImmobilier);
+	public boolean louerBienImmobilier(Long idLogement);
 	
 }

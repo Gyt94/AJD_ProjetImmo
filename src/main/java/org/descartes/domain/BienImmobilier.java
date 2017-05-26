@@ -12,17 +12,18 @@ public class BienImmobilier {
 	private int prix;
 	private TypeLogement typeLogement;
 	private long id;
-	
-	
+	private boolean estLoue;
+
 	public BienImmobilier() {
 		super();
 	}
 	
-	public BienImmobilier(String ville, int prix, TypeLogement typeLogement) {
+	public BienImmobilier(String ville, int prix, TypeLogement typeLogement, boolean estLoue) {
 		super();
 		this.ville = ville;
 		this.prix = prix;
 		this.typeLogement = typeLogement;
+		this.estLoue = estLoue;
 	}
 	
 	@Id
@@ -57,6 +58,14 @@ public class BienImmobilier {
 
 	public void setTypeLogement(TypeLogement typeLogement) {
 		this.typeLogement = typeLogement;
+	}
+	
+	public boolean isEstLoue() {
+		return estLoue;
+	}
+
+	public void setEstLoue(boolean estLoue) {
+		this.estLoue = estLoue;
 	}
 	
 }

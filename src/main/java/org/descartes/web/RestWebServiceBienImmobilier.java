@@ -35,6 +35,13 @@ public class RestWebServiceBienImmobilier {
 	public void postBienImmobilier(@RequestBody BienImmobilier bienImmobilier){
 		serviceBienImmobilier.addBienImmobilier(bienImmobilier);
 	}
+	
+	@RequestMapping(value = "/louerLogement/{idLogement}", method = RequestMethod.PUT)
+	@ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public boolean louerBienImmobilier(@PathVariable("idLogement") Long idLogement){
+		return serviceBienImmobilier.louerBienImmobilier(idLogement);
+	}
 
 
 }

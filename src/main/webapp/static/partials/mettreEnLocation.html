@@ -15,12 +15,13 @@
         <label for="typeLogement" class="control-label col-xs-2">Type de logement</label>
         <div class="col-xs-10">
             <select class="form-control" id="typeLogement" ng-model="bienImmobilier.typeLogement" required>
-            <option value="" disabled selected>Sélectionnez le type de votre logement</option>
-			<option value="Maison">Maison</option>
-			<option value="Appartement">Appartement</option>
-	</select>
+            	<option value="" disabled selected>Sélectionnez le type de votre logement</option>
+				<option value="Maison">Maison</option>
+				<option value="Appartement">Appartement</option>
+			</select>
         </div>
     </div>
+    <input type="hidden" ng-model="bienImmobilier.estLoue" value="false">
 	<div class="form-group">
             <div class="col-xs-offset-2 col-xs-10">
                 <button type="submit" ng-disabled="formAjoutBienImmobilier.$invalid" ng-click="ajouterBienImmobilier(bienImmobilier)" class="btn btn-primary">Ajouter</button>
