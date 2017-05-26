@@ -1,3 +1,5 @@
+<meta charset="utf-8" />
+<script src="https://code.angularjs.org/1.2.5/i18n/angular-locale_da-dk.js"></script>
 <table class="table table-striped table-bordered table-hover">
         <thead>  
           <tr>  
@@ -10,7 +12,7 @@
 	<tr ng-repeat="logement in listeLogement">
 		<td> {{logement.id}} </td>
 		<td> {{logement.ville}} </td>
-		<td> {{logement.prix}}€ </td>
+		<td> {{logement.prix | currency}} </td>
 	</tr>
         </tbody>  
 </table>  

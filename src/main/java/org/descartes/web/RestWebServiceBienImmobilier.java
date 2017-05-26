@@ -22,13 +22,6 @@ public class RestWebServiceBienImmobilier {
 	@Autowired
 	IServiceBienImmobilier serviceBienImmobilier;
 
-	@RequestMapping(value = "/allBienImmobilierFromACity/{ville}", method = RequestMethod.GET)
-	@ResponseStatus(HttpStatus.OK)
-	@ResponseBody
-	public List<?> getAllBienImmobilierFromACity(@PathVariable("ville") String ville){
-		return serviceBienImmobilier.findBienImmobilierFromACity(ville);
-	}
-	
 	@RequestMapping(value = "/trouverLogement/{typeLogement}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
@@ -37,7 +30,7 @@ public class RestWebServiceBienImmobilier {
 		return serviceBienImmobilier.trouverLogement(type);
 	}
 	
-	@RequestMapping(value = "/bienImmobilier", method = RequestMethod.POST)
+	@RequestMapping(value = "/ajouterBienImmobilier", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.OK)
 	public void postBienImmobilier(@RequestBody BienImmobilier bienImmobilier){
 		serviceBienImmobilier.addBienImmobilier(bienImmobilier);

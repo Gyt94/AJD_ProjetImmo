@@ -9,11 +9,11 @@ app.config(['$routeProvider',
 			when('/projetImmo', {
 				templateUrl: 'partials/menu.html'
 			}).
-			when('/projetImmo/louer', {
-				templateUrl: 'partials/chercher.html',
-				controller: 'locationController'
+			when('/projetImmo/mettreEnLocation', {
+				templateUrl: 'partials/mettreEnLocation.html',
+				controller: 'mettreEnLocation'
 			}).
-			when('/projetImmo/trouverLogement/:msg', {
+			when('/projetImmo/trouverLogement/:typeLogement', {
 				templateUrl: 'partials/trouverLogement.html',
 				controller: 'trouverLogement'
 			}).

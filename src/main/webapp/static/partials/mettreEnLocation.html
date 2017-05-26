@@ -1,65 +1,12 @@
-<!DOCTYPE HTML>
-
-<html>
-	<head>
-		<title>LocIMMO</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="css/main.css" />
-	</head>
-	<body class="subpage">
-
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="#/projetImmo" class="logo">LocIMMO</a>
-					<nav id="nav">
-						<a href="#/projetImmo">Home</a>
-						<a href="#/projetImmo/louer">Chercher</a>
-						<a href="#/projetImmo/ramener">Mettre à louer</a>
-					</nav>
-					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-				</div>
-			</header>
-
-		<!-- Three -->
-			<section id="two" class="wrapper">
-				<div class="inner">
-					<header class="align-center">
-						<h2>Mettez votre bien en location</h2>
-						<p>Remplissez les caractéristiques de votre bien :</p>
-					</header>
-				</div>
-				<!--  <div ng-app="postserviceApp" ng-controller="postserviceCtrl">-->
-<div>
-Ville : <input ng-model="bienImmobilier.ville" /><br/><br/>
-Budget Minimal : <input ng-model="bienImmobilier.budgetMini" /><br/><br/>
-Budget Maximal : <input ng-model="bienImmobilier.budgetMax" /><br/><br/>
-Type de bien : <select ng-model="bienImmobilier.typeLogement"><option value="Maison" selected>Maison</option>
-<option value="Appartement"> Appartement</option></select><br/><br/>
-
-<a href="#" class="button special" ng-click="postdata(bienImmobilier)" >Send</a>
-<input type="button" value="Send" ng-click="postdata(bienImmobilier)" /> <br/><br/>
-			</section>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<div class="flex">
-						<ul class="icons">
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
-						</ul>
-					</div>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="js/jquery.min.js"></script>
-			<script src="js/skel.min.js"></script>
-			<script src="js/util.js"></script>
-			<script src="js/main.js"></script>
-
-	</body>
-</html>
+<form novalidate>
+	Ajout logement : <br>
+	
+	Ville : <input ng-model="bienImmobilier.ville" /><br/><br/>
+Prix : <input ng-model="bienImmobilier.prix" /><br/><br/>
+Type de logement : 
+<select ng-model="bienImmobilier.typeLogement">
+	<option value="Maison" selected>Maison</option>
+	<option value="Appartement">Appartement</option>
+</select><br/><br/>
+<input type="submit" ng-click="ajouterBienImmobilier(bienImmobilier)" value="Ajouter" >	
+</form>
