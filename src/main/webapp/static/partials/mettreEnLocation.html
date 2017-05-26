@@ -1,12 +1,32 @@
-<form novalidate>
-	Ajout logement : <br>
-	
-	Ville : <input ng-model="bienImmobilier.ville" /><br/><br/>
-Prix : <input ng-model="bienImmobilier.prix" /><br/><br/>
-Type de logement : 
-<select ng-model="bienImmobilier.typeLogement">
-	<option value="Maison" selected>Maison</option>
-	<option value="Appartement">Appartement</option>
-</select><br/><br/>
-<input type="submit" ng-click="ajouterBienImmobilier(bienImmobilier)" value="Ajouter" >	
+<form name="formAjoutBienImmobilier" class="form-horizontal" novalidate>
+	<div class="form-group">
+		<label for="inputVille" class="control-label col-xs-2">Ville</label>
+		<div class="col-xs-10">
+			<input name="ville" type="text" class="form-control" id="inputVille" placeholder="Ville" ng-model="bienImmobilier.ville" required/>
+		</div>
+	</div>
+	<div class="form-group">
+        <label for="inputPrix" class="control-label col-xs-2">Prix</label>
+        <div class="col-xs-10">
+            <input type="number" class="form-control" id="inputPrix" placeholder="Prix" ng-model="bienImmobilier.prix" required/> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="typeLogement" class="control-label col-xs-2">Type de logement</label>
+        <div class="col-xs-10">
+            <select class="form-control" id="typeLogement" ng-model="bienImmobilier.typeLogement" required>
+            <option value="" disabled selected>Sélectionnez le type de votre logement</option>
+			<option value="Maison">Maison</option>
+			<option value="Appartement">Appartement</option>
+	</select>
+        </div>
+    </div>
+	<div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <button type="submit" ng-disabled="formAjoutBienImmobilier.$invalid" ng-click="ajouterBienImmobilier(bienImmobilier)" class="btn btn-primary">Ajouter</button>
+            </div>
+        </div>
 </form>
+
+
+        

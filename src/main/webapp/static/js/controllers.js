@@ -12,9 +12,7 @@ $scope.ajouterBienImmobilier = function(bienImmobilier) {
 		  error(function(data, status, headers, config) {
 			  alert('erreur');
 		  });
-		
 	};
-        
 });
 
 locationControllers.controller("trouverLogement", function($scope,$http,$routeParams) {
