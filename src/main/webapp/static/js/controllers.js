@@ -10,6 +10,7 @@ $scope.ajouterBienImmobilier = function(bienImmobilier) {
 			  $location.path('/projetImmo').replace();
 		  }).
 		  error(function(data, status, headers, config) {
+			  alert('erreur');
 		  });
 		
 	};
